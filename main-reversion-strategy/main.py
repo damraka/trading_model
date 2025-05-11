@@ -2,7 +2,6 @@ import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 TICKER = "AAPL"
 START_DATE = "2020-01-01"
 END_DATE = "2024-12-31"
@@ -13,7 +12,7 @@ data = yf.download(TICKER, start=START_DATE, end=END_DATE)
 print("Columns after download:")
 print(data.columns)
 
-data[('MA', TICKER)] = data[('Close', TICKER)].rolling(window=MA_WINDOW).mean()  # Multi-index for MA
+data[('MA', TICKER)] = data[('Close', TICKER)].rolling(window=MA_WINDOW).mean() 
 
 print("Columns after calculating 'MA':")
 print(data.columns)
